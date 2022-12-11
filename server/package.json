@@ -1,10 +1,21 @@
 {
   "name": "plasma",
   "version": "1.0.0",
-  "description": "",
+  "description": "Project by Nilesh",
   "main": "server.js",
+  "engines": {
+    "node": "16.15.1",
+    "npm": "8.13.2"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server/server.js",
+    "server": "nodemon server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client-install": "cd client && npm install",
+    "client-build": "cd client && npm run build",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+
   },
   "author": "Nilesh",
   "license": "ISC",
